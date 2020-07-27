@@ -1,0 +1,31 @@
+class Klass {
+
+    static var field = 0;
+
+    static inc(){
+        field = field + 1;
+    }
+    //getter
+    static getField {
+        return field;
+    }
+
+}
+
+for(var i =0;i<50;i = i+1){
+    Klass.inc();
+}
+
+print Klass.getField;// Should print 50
+
+var obj1 = Klass();
+var obj2 = Klass();
+
+for(var i =0;i<25;i=i+1){
+    obj1.inc();
+}
+for(var i=0;i<25;i=i+1){
+    obj2.inc();
+}
+//SHould be 100
+print Klass.getField;
